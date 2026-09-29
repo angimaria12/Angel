@@ -3,7 +3,7 @@
 # print(7%4,7/4,7//4)
 #print("Name: Arun \nAge: 21 \nDegree: BCA" )
 #Name="Arun"
-Age=21
+# Age=21
 #Roll_no="101"
 #print(Name)
 #print(Age)
@@ -44,3 +44,4 @@ while i <= 5:
         break
     print(i)
     i += 1
+
