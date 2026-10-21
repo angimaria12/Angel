@@ -790,124 +790,41 @@
       font-weight: 700;
     }
 
-    .skill-items {
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-
-    .skill-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding-bottom: 0.9rem;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .skill-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .skill-info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .skill-name-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-
-    .skill-name {
-      font-size: 0.975rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .skill-desc {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .skill-badge-level {
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.2rem 0.65rem;
-      border-radius: var(--radius-full);
-      letter-spacing: 0.03em;
-      white-space: nowrap;
-      text-transform: uppercase;
-    }
-
-    .skill-badge-level.advanced {
-      background: rgba(13, 148, 136, 0.16);
-      color: var(--badge-text);
-      border: 1px solid rgba(13, 148, 136, 0.35);
-    }
-
-    .skill-badge-level.proficient {
-      background: rgba(99, 102, 241, 0.14);
-      color: #818cf8;
-      border: 1px solid rgba(99, 102, 241, 0.3);
-    }
-
-    .skill-badge-level.hands-on {
-      background: rgba(245, 158, 11, 0.14);
-      color: #fbbf24;
-      border: 1px solid rgba(245, 158, 11, 0.3);
-    }
-
-    .skill-meter {
-      display: flex;
-      gap: 6px;
-      width: 100%;
-    }
-
-    .meter-segment {
-      height: 5px;
-      flex: 1;
-      border-radius: var(--radius-full);
-      background: var(--bg-surface-elevated);
-      border: 1px solid var(--border-color);
-      transition: all var(--transition-normal);
-    }
-
-    .meter-segment.filled {
-      background: linear-gradient(90deg, var(--primary), #2dd4bf);
-      border-color: transparent;
-      box-shadow: 0 0 8px rgba(13, 148, 136, 0.25);
-    }
-
-    /* Soft Skills Tags */
-    .soft-skills-list {
+    .skills-list {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      margin-top: 0.5rem;
     }
 
-    .soft-skill-badge {
+    .skill-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 0.9rem;
+      gap: 0.6rem;
+      padding: 0.65rem 1.15rem;
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      font-size: 0.875rem;
+      font-size: 0.95rem;
       font-weight: 500;
       color: var(--text-primary);
       transition: all var(--transition-fast);
+      cursor: default;
     }
 
-    .soft-skill-badge:hover {
+    .skill-badge:hover {
       border-color: var(--primary);
-      transform: translateY(-2px);
+      color: var(--primary);
       background: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.15);
+    }
+
+    .skill-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
     }
 
     /* -------------------------------------------------------------
@@ -1821,65 +1738,33 @@
         </div>
 
         <div class="skills-grid">
-          <!-- Card 1: Languages & Databases -->
+          <!-- Card 1: Languages & Database -->
           <div class="skill-category-card reveal" data-category="languages">
             <div class="category-header">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);">
                 <polyline points="16 18 22 12 16 6"></polyline>
                 <polyline points="8 6 2 12 8 18"></polyline>
               </svg>
-              <h3 class="category-title">Programming &amp; Databases</h3>
+              <h3 class="category-title">Languages &amp; Database</h3>
             </div>
 
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-info">
-                  <div class="skill-name-wrap">
-                    <span class="skill-name">Python</span>
-                    <span class="skill-desc">Pandas, NumPy, Scikit-learn, Data Cleaning &amp; EDA</span>
-                  </div>
-                  <span class="skill-badge-level advanced">Advanced</span>
-                </div>
-                <div class="skill-meter" aria-hidden="true">
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                </div>
+            <div class="skills-list">
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                Python
               </div>
-
-              <div class="skill-item">
-                <div class="skill-info">
-                  <div class="skill-name-wrap">
-                    <span class="skill-name">SQL</span>
-                    <span class="skill-desc">MySQL, Relational Schemas (DDL/DML), CTEs, Windowing</span>
-                  </div>
-                  <span class="skill-badge-level advanced">Advanced</span>
-                </div>
-                <div class="skill-meter" aria-hidden="true">
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                </div>
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                SQL
               </div>
-
-              <div class="skill-item">
-                <div class="skill-info">
-                  <div class="skill-name-wrap">
-                    <span class="skill-name">Java</span>
-                    <span class="skill-desc">Core Foundations, Object-Oriented Principles (OOP)</span>
-                  </div>
-                  <span class="skill-badge-level proficient">Proficient</span>
-                </div>
-                <div class="skill-meter" aria-hidden="true">
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment"></span>
-                </div>
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                Java
               </div>
             </div>
           </div>
 
-          <!-- Card 2: Data Analytics & BI -->
+          <!-- Card 2: Data Analytics -->
           <div class="skill-category-card reveal" data-category="analytics">
             <div class="category-header">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);">
@@ -1890,112 +1775,48 @@
               <h3 class="category-title">Data Analytics &amp; Visualization</h3>
             </div>
 
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-info">
-                  <div class="skill-name-wrap">
-                    <span class="skill-name">Microsoft Excel</span>
-                    <span class="skill-desc">PivotTables, PivotCharts, Slicers, Power Query, Dynamic Modeling</span>
-                  </div>
-                  <span class="skill-badge-level advanced">Advanced</span>
-                </div>
-                <div class="skill-meter" aria-hidden="true">
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                </div>
+            <div class="skills-list">
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                Microsoft Excel
               </div>
-
-              <div class="skill-item">
-                <div class="skill-info">
-                  <div class="skill-name-wrap">
-                    <span class="skill-name">Power BI</span>
-                    <span class="skill-desc">Star Schema Modeling, DAX Measures, Executive KPI Dashboards</span>
-                  </div>
-                  <span class="skill-badge-level advanced">Advanced</span>
-                </div>
-                <div class="skill-meter" aria-hidden="true">
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                </div>
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                Tableau
               </div>
-
-              <div class="skill-item">
-                <div class="skill-info">
-                  <div class="skill-name-wrap">
-                    <span class="skill-name">Tableau</span>
-                    <span class="skill-desc">Visual Analytics, Interactive Reports &amp; Storyboards</span>
-                  </div>
-                  <span class="skill-badge-level proficient">Proficient</span>
-                </div>
-                <div class="skill-meter" aria-hidden="true">
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment"></span>
-                </div>
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                Power BI
               </div>
             </div>
           </div>
 
-          <!-- Card 3: Developer & Data Tools -->
+          <!-- Card 3: Tools -->
           <div class="skill-category-card reveal" data-category="tools">
             <div class="category-header">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);">
                 <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
               </svg>
-              <h3 class="category-title">Tools &amp; Development Environments</h3>
+              <h3 class="category-title">Developer &amp; Data Tools</h3>
             </div>
 
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-info">
-                  <div class="skill-name-wrap">
-                    <span class="skill-name">Git &amp; GitHub</span>
-                    <span class="skill-desc">Version Control, Branch Management, Repository Architectures</span>
-                  </div>
-                  <span class="skill-badge-level advanced">Advanced</span>
-                </div>
-                <div class="skill-meter" aria-hidden="true">
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                </div>
+            <div class="skills-list">
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                VS Code
               </div>
-
-              <div class="skill-item">
-                <div class="skill-info">
-                  <div class="skill-name-wrap">
-                    <span class="skill-name">VS Code &amp; Visual Studio</span>
-                    <span class="skill-desc">Primary IDEs, Environment Configurations, Debugging</span>
-                  </div>
-                  <span class="skill-badge-level advanced">Advanced</span>
-                </div>
-                <div class="skill-meter" aria-hidden="true">
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                </div>
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                Visual Studio
               </div>
-
-              <div class="skill-item">
-                <div class="skill-info">
-                  <div class="skill-name-wrap">
-                    <span class="skill-name">Jupyter Notebooks</span>
-                    <span class="skill-desc">Exploratory Data Analysis, Machine Learning Workflows</span>
-                  </div>
-                  <span class="skill-badge-level proficient">Proficient</span>
-                </div>
-                <div class="skill-meter" aria-hidden="true">
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment filled"></span>
-                  <span class="meter-segment"></span>
-                </div>
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                Git &amp; GitHub
               </div>
             </div>
           </div>
 
-          <!-- Card 4: Soft Skills & Analytical Mindset -->
+          <!-- Card 4: Soft Skills -->
           <div class="skill-category-card reveal" data-category="soft">
             <div class="category-header">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);">
@@ -2004,34 +1825,30 @@
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
-              <h3 class="category-title">Professional &amp; Analytical Aptitude</h3>
+              <h3 class="category-title">Soft Skills</h3>
             </div>
 
-            <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom: 1rem;">
-              Demonstrated through academic projects, team collaborations, and NPTEL certified soft-skills coursework:
-            </p>
-
-            <div class="soft-skills-list">
-              <span class="soft-skill-badge">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Analytical &amp; Critical Thinking
-              </span>
-              <span class="soft-skill-badge">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Data Storytelling &amp; Communication
-              </span>
-              <span class="soft-skill-badge">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Attention to Detail &amp; Data Accuracy
-              </span>
-              <span class="soft-skill-badge">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Team Collaboration &amp; Ownership
-              </span>
-              <span class="soft-skill-badge">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Fast Adaptability &amp; Problem Solving
-              </span>
+            <div class="skills-list">
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                Analytical Thinking
+              </div>
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                Communication
+              </div>
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                Teamwork
+              </div>
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                Attention to Detail
+              </div>
+              <div class="skill-badge">
+                <span class="skill-badge-dot"></span>
+                Adaptability
+              </div>
             </div>
           </div>
         </div>
