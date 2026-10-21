@@ -1,0 +1,2808 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anglina Maria M | Entry-Level Data Analyst Portfolio</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Portfolio of Anglina Maria M - Entry-level Data Analyst, BCA graduate (2026) from PSGR Krishnammal College for Women. Skilled in Python, SQL, Excel, Power BI, and Machine Learning.">
+  <meta name="keywords" content="Anglina Maria, Data Analyst, Portfolio, Python, SQL, Excel, Power BI, Machine Learning, Tableau, PSGR Krishnammal, Coimbatore">
+  <meta name="author" content="Anglina Maria M">
+  <meta property="og:title" content="Anglina Maria M | Data Analyst Portfolio">
+  <meta property="og:description" content="Transforming raw business data into actionable visual stories and high-impact analytics dashboards.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://angimaria12.github.io/Angel/">
+  <meta name="theme-color" content="#0d9488">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* -------------------------------------------------------------
+       CSS Custom Properties / Design Tokens
+       ------------------------------------------------------------- */
+    :root {
+      --primary: #0d9488;
+      --primary-hover: #0f766e;
+      --primary-light: rgba(13, 148, 136, 0.12);
+      --primary-glow: rgba(13, 148, 136, 0.35);
+      --accent: #6366f1;
+      --accent-hover: #4f46e5;
+      
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      
+      --container-width: 1200px;
+    }
+
+    /* Dark Mode Theme Tokens (Default) */
+    [data-theme="dark"] {
+      --bg-body: #0b0f19;
+      --bg-surface: #111827;
+      --bg-surface-elevated: #1a2234;
+      --bg-surface-card: #131b2c;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(45, 212, 191, 0.4);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --nav-bg: rgba(11, 15, 25, 0.85);
+      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --badge-bg: rgba(13, 148, 136, 0.16);
+      --badge-text: #2dd4bf;
+      --code-bg: #1e293b;
+    }
+
+    /* Light Mode Theme Tokens */
+    [data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: #f1f5f9;
+      --bg-surface-card: #ffffff;
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-hover: rgba(13, 148, 136, 0.5);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --nav-bg: rgba(248, 250, 252, 0.88);
+      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+      --badge-bg: rgba(13, 148, 136, 0.12);
+      --badge-text: #0f766e;
+      --code-bg: #e2e8f0;
+    }
+
+    /* -------------------------------------------------------------
+       Base & Reset Styles
+       ------------------------------------------------------------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-body);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Background Glow */
+    .ambient-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .glow-circle-1 {
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.15) 0%, rgba(13, 148, 136, 0) 70%);
+      border-radius: 50%;
+      filter: blur(40px);
+    }
+
+    .glow-circle-2 {
+      position: absolute;
+      top: 40%;
+      left: -150px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(99, 102, 241, 0) 70%);
+      border-radius: 50%;
+      filter: blur(50px);
+    }
+
+    /* Top Reading Progress Bar */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), #2dd4bf, var(--accent));
+      width: 0%;
+      z-index: 1000;
+      transition: width 0.1s ease-out;
+    }
+
+    /* Layout Containers */
+    .container {
+      width: 100%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--text-primary);
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    a:hover {
+      color: var(--primary-hover);
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 0.825rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: var(--radius-full);
+      margin-bottom: 1rem;
+      border: 1px solid rgba(13, 148, 136, 0.25);
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1.6rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all var(--transition-normal);
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff !important;
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(13, 148, 136, 0.45);
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface-elevated);
+      color: var(--text-primary) !important;
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-surface);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      color: var(--primary) !important;
+    }
+
+    .btn-sm {
+      padding: 0.45rem 0.95rem;
+      font-size: 0.85rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .btn-icon {
+      padding: 0.6rem;
+      border-radius: var(--radius-md);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-surface-elevated);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      transition: all var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .btn-icon:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* -------------------------------------------------------------
+       Navigation Bar
+       ------------------------------------------------------------- */
+    .navbar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 900;
+      transition: background-color var(--transition-normal), border-color var(--transition-normal);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4.5rem;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-logo:hover {
+      color: var(--primary);
+    }
+
+    .brand-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(13, 148, 136, 0.3);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--text-secondary);
+      font-size: 0.925rem;
+      font-weight: 500;
+      transition: color var(--transition-fast);
+      position: relative;
+      padding: 0.3rem 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary);
+      border-radius: var(--radius-full);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle-btn {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Mobile Menu Toggle */
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* -------------------------------------------------------------
+       Hero Section
+       ------------------------------------------------------------- */
+    .hero {
+      padding: 6.5rem 0 5rem 0;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-full);
+      background: var(--badge-bg);
+      border: 1px solid rgba(13, 148, 136, 0.3);
+      color: var(--badge-text);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.15); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .hero-title {
+      font-size: 3.25rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, var(--primary) 0%, #2dd4bf 50%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .hero-role {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-role span {
+      color: var(--primary);
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 2.25rem;
+      max-width: 600px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-socials {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .social-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .hero-social-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    /* Hero Analytics Mockup Card */
+    .hero-visual {
+      position: relative;
+    }
+
+    .analytics-card {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-normal);
+    }
+
+    .analytics-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .card-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .card-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border-color);
+    }
+
+    .card-dots span:nth-child(1) { background: #ef4444; }
+    .card-dots span:nth-child(2) { background: #f59e0b; }
+    .card-dots span:nth-child(3) { background: #10b981; }
+
+    .card-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--badge-text);
+      background: var(--badge-bg);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .kpi-box {
+      background: var(--bg-surface-elevated);
+      padding: 1.1rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .kpi-title {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+
+    .kpi-value {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .kpi-trend {
+      font-size: 0.8rem;
+      color: #10b981;
+      font-weight: 600;
+    }
+
+    .chart-box {
+      background: var(--bg-surface-elevated);
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .chart-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .chart-bars {
+      display: flex;
+      align-items: flex-end;
+      height: 100px;
+      gap: 12px;
+      padding-top: 10px;
+    }
+
+    .bar-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      justify-content: flex-end;
+    }
+
+    .bar-pillar {
+      width: 100%;
+      background: linear-gradient(180deg, var(--primary) 0%, rgba(13, 148, 136, 0.4) 100%);
+      border-radius: 4px 4px 0 0;
+      transition: height 0.8s ease-out;
+    }
+
+    .bar-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    /* -------------------------------------------------------------
+       About Section
+       ------------------------------------------------------------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .about-story p {
+      font-size: 1.025rem;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .highlight-pill {
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+    }
+
+    .about-attributes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .attribute-card {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      transition: all var(--transition-normal);
+    }
+
+    .attribute-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .attribute-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .attribute-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .attribute-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    /* -------------------------------------------------------------
+       Skills Section
+       ------------------------------------------------------------- */
+    .skills-filter-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .filter-tab:hover, .filter-tab.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px var(--primary-glow);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .skill-category-card {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      transition: border-color var(--transition-normal);
+    }
+
+    .skill-category-card:hover {
+      border-color: var(--border-hover);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .category-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .skill-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .skill-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .skill-name-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .skill-name {
+      font-size: 0.975rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .skill-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .skill-badge-level {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .skill-badge-level.advanced {
+      background: rgba(13, 148, 136, 0.16);
+      color: var(--badge-text);
+      border: 1px solid rgba(13, 148, 136, 0.35);
+    }
+
+    .skill-badge-level.proficient {
+      background: rgba(99, 102, 241, 0.14);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .skill-badge-level.hands-on {
+      background: rgba(245, 158, 11, 0.14);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .skill-meter {
+      display: flex;
+      gap: 6px;
+      width: 100%;
+    }
+
+    .meter-segment {
+      height: 5px;
+      flex: 1;
+      border-radius: var(--radius-full);
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      transition: all var(--transition-normal);
+    }
+
+    .meter-segment.filled {
+      background: linear-gradient(90deg, var(--primary), #2dd4bf);
+      border-color: transparent;
+      box-shadow: 0 0 8px rgba(13, 148, 136, 0.25);
+    }
+
+    /* Soft Skills Tags */
+    .soft-skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .soft-skill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.9rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      transition: all var(--transition-fast);
+    }
+
+    .soft-skill-badge:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      background: var(--primary-light);
+    }
+
+    /* -------------------------------------------------------------
+       Projects Section
+       ------------------------------------------------------------- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-normal);
+      position: relative;
+    }
+
+    .project-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.35);
+    }
+
+    .project-card.featured {
+      grid-column: span 1;
+      border: 1px solid rgba(13, 148, 136, 0.35);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-date {
+      font-family: var(--font-mono);
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      background: var(--bg-surface-elevated);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .project-description {
+      font-size: 0.925rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-highlights {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .project-highlights li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      position: relative;
+      padding-left: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .project-highlights li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: var(--bg-surface-elevated);
+      color: var(--text-secondary);
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* -------------------------------------------------------------
+       Certifications Section
+       ------------------------------------------------------------- */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cert-card {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      transition: all var(--transition-normal);
+    }
+
+    .cert-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+    }
+
+    .cert-badge-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cert-content {
+      flex: 1;
+    }
+
+    .cert-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      color: var(--text-primary);
+    }
+
+    .cert-issuer {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .cert-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* -------------------------------------------------------------
+       Education Section
+       ------------------------------------------------------------- */
+    .education-card {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      max-width: 850px;
+      margin: 0 auto;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .education-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .edu-degree {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .edu-year {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--badge-text);
+      background: var(--badge-bg);
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+    }
+
+    .edu-institution {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .edu-location {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .edu-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .edu-highlight-item h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .edu-highlight-item p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* -------------------------------------------------------------
+       Contact Section
+       ------------------------------------------------------------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    .contact-info-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .contact-card {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      transition: all var(--transition-normal);
+      text-decoration: none;
+    }
+
+    .contact-card:hover {
+      border-color: var(--primary);
+      transform: translateX(4px);
+    }
+
+    .contact-icon-box {
+      width: 46px;
+      height: 46px;
+      border-radius: var(--radius-md);
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-card-text {
+      flex: 1;
+    }
+
+    .contact-label {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0.4rem;
+      border-radius: var(--radius-sm);
+      transition: color var(--transition-fast);
+    }
+
+    .copy-btn:hover {
+      color: var(--primary);
+    }
+
+    /* Contact Form */
+    .contact-form-panel {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* -------------------------------------------------------------
+       Footer
+       ------------------------------------------------------------- */
+    .footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 0;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-text {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-link {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      transition: color var(--transition-fast);
+    }
+
+    .footer-link:hover {
+      color: var(--primary);
+    }
+
+    /* -------------------------------------------------------------
+       Toast Notification
+       ------------------------------------------------------------- */
+    #toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--bg-surface-elevated);
+      color: var(--text-primary);
+      border: 1px solid var(--primary);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      padding: 0.9rem 1.4rem;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all var(--transition-normal);
+    }
+
+    #toast.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* -------------------------------------------------------------
+       Modal (Resume Preview / Quick View)
+       ------------------------------------------------------------- */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      z-index: 1500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-normal);
+      padding: 1.5rem;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-container {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 650px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      transform: scale(0.95);
+      transition: transform var(--transition-normal);
+    }
+
+    .modal-overlay.open .modal-container {
+      transform: scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .modal-close-btn:hover {
+      color: var(--text-primary);
+    }
+
+    /* -------------------------------------------------------------
+       Animations & Responsive Media Queries
+       ------------------------------------------------------------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .hero-title {
+        font-size: 2.75rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 4.5rem;
+        left: 0;
+        width: 100%;
+        background: var(--bg-surface);
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.25rem;
+        transform: translateY(-150%);
+        transition: transform var(--transition-normal);
+        box-shadow: var(--card-shadow);
+      }
+
+      .nav-menu.open {
+        transform: translateY(0);
+      }
+
+      .hero-title {
+        font-size: 2.25rem;
+      }
+
+      .hero-role {
+        font-size: 1.15rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-attributes {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .edu-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- Ambient Background Canvas Glows -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="glow-circle-1"></div>
+    <div class="glow-circle-2"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Anglina Maria Portfolio Home">
+        <div class="brand-avatar">AM</div>
+        <span>Anglina Maria</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Dark/Light Mode Toggle -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme" title="Toggle Theme">
+          <svg id="theme-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="theme-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================
+         Hero Section
+         ========================================================= -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="status-dot"></span>
+            Available for Entry-Level Data Analyst Roles
+          </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Anglina Maria M</span>
+          </h1>
+          <h2 class="hero-role">
+            Entry-Level Data Analyst &amp; <span>BCA Graduate (2026)</span>
+          </h2>
+          <p class="hero-description">
+            Passionate about turning complex business data into clear, actionable intelligence. Skilled in data auditing, statistical modeling, and designing high-impact interactive dashboards with Python, SQL, Excel, and Power BI.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              View Projects
+            </a>
+            <button id="resume-btn" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download Resume
+            </button>
+          </div>
+
+          <div class="hero-socials">
+            <span class="social-label">Connect:</span>
+            <div class="hero-social-links">
+              <a href="https://github.com/angimaria12" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub Profile" title="GitHub">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/anglina-maria" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn Profile" title="LinkedIn">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="mailto:anglinamaria24@gmail.com" class="btn-icon" aria-label="Email Anglina Maria" title="Email">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+              <a href="tel:+918056900192" class="btn-icon" aria-label="Phone Number" title="Phone">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Mockup: Analytics Live Scorecard -->
+        <div class="hero-visual reveal">
+          <div class="analytics-card">
+            <div class="card-topbar">
+              <div class="card-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="card-tag">EXECUTIVE ANALYTICS METRICS</div>
+            </div>
+
+            <div class="kpi-row">
+              <div class="kpi-box">
+                <div class="kpi-title">ML Model Accuracy</div>
+                <div class="kpi-value">99.33% <span class="kpi-trend">Random Forest</span></div>
+              </div>
+              <div class="kpi-box">
+                <div class="kpi-title">Relational Tables</div>
+                <div class="kpi-value">15+ <span class="kpi-trend">Cleaned ETL</span></div>
+              </div>
+            </div>
+
+            <div class="chart-box">
+              <div class="chart-header">
+                <span class="chart-title">Data Pipeline Throughput</span>
+                <span style="font-size:0.75rem; color:var(--text-muted); font-family:var(--font-mono);">KPI Metrics</span>
+              </div>
+              <div class="chart-bars">
+                <div class="bar-group">
+                  <div class="bar-pillar" style="height: 65%;"></div>
+                  <span class="bar-label">Excel</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pillar" style="height: 85%;"></div>
+                  <span class="bar-label">SQL</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pillar" style="height: 95%;"></div>
+                  <span class="bar-label">Python</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pillar" style="height: 75%;"></div>
+                  <span class="bar-label">BI</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pillar" style="height: 90%;"></div>
+                  <span class="bar-label">ML</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         About Section
+         ========================================================= -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Bridging Data Health &amp; Business Insights</h2>
+          <p class="section-subtitle">A detail-oriented analyst committed to data integrity, exploratory modeling, and executive storytelling.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-story reveal">
+            <p>
+              I am a <span class="highlight-pill">BCA graduate (Class of 2026)</span> from the prestigious <strong>PSGR Krishnammal College for Women</strong> in Coimbatore. My analytical journey combines hands-on database management, statistical programming, and modern business intelligence tools to solve real-world problems.
+            </p>
+            <p>
+              I specialize in <strong>data cleansing, pattern recognition, and pipeline engineering</strong>. Whether identifying critical risk factors in clinical health datasets or building interactive retail dashboards for executive decisions, I ensure data accuracy from raw collection to final visualization.
+            </p>
+            <p>
+              Beyond traditional analysis, I bring experience in <strong>secure application workflows and biometric authentication algorithms</strong>, combining rigorous logic with clean, intuitive visual presentation.
+            </p>
+            <div style="margin-top: 1.5rem;">
+              <a href="#contact" class="btn btn-secondary btn-sm">Get In Touch &rarr;</a>
+            </div>
+          </div>
+
+          <div class="about-attributes reveal">
+            <div class="attribute-card">
+              <div class="attribute-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <h3 class="attribute-title">Data Cleansing &amp; ETL</h3>
+              <p class="attribute-desc">Resolving nulls, handling class imbalance, encoding categorical features, and standardizing schemas.</p>
+            </div>
+
+            <div class="attribute-card">
+              <div class="attribute-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+              </div>
+              <h3 class="attribute-title">Pattern Discovery</h3>
+              <p class="attribute-desc">Applying statistical models, correlation matrices, and predictive algorithms like Random Forest and XGBoost.</p>
+            </div>
+
+            <div class="attribute-card">
+              <div class="attribute-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <h3 class="attribute-title">Interactive BI Dashboards</h3>
+              <p class="attribute-desc">Designing multi-slicer Excel, Power BI, and Tableau dashboards featuring custom DAX measures and KPIs.</p>
+            </div>
+
+            <div class="attribute-card">
+              <div class="attribute-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <h3 class="attribute-title">Relational SQL Modeling</h3>
+              <p class="attribute-desc">Structuring Star/Snowflake schemas, complex CTEs, analytical window functions, and integrity constraints.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         Skills Section
+         ========================================================= -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Technical Competencies</span>
+          <h2 class="section-title">Skills &amp; Tooling Proficiency</h2>
+          <p class="section-subtitle">A balanced toolkit bridging analytical programming, relational database querying, and dashboard design.</p>
+        </div>
+
+        <!-- Filter tabs for interactivity -->
+        <div class="skills-filter-nav reveal">
+          <button class="filter-tab active" data-filter="all">All Skills</button>
+          <button class="filter-tab" data-filter="analytics">Data Analytics &amp; BI</button>
+          <button class="filter-tab" data-filter="languages">Languages &amp; DB</button>
+          <button class="filter-tab" data-filter="tools">Developer Tools</button>
+          <button class="filter-tab" data-filter="soft">Soft Skills</button>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Card 1: Languages & Databases -->
+          <div class="skill-category-card reveal" data-category="languages">
+            <div class="category-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              <h3 class="category-title">Programming &amp; Databases</h3>
+            </div>
+
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <div class="skill-name-wrap">
+                    <span class="skill-name">Python</span>
+                    <span class="skill-desc">Pandas, NumPy, Scikit-learn, Data Cleaning &amp; EDA</span>
+                  </div>
+                  <span class="skill-badge-level advanced">Advanced</span>
+                </div>
+                <div class="skill-meter" aria-hidden="true">
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <div class="skill-name-wrap">
+                    <span class="skill-name">SQL</span>
+                    <span class="skill-desc">MySQL, Relational Schemas (DDL/DML), CTEs, Windowing</span>
+                  </div>
+                  <span class="skill-badge-level advanced">Advanced</span>
+                </div>
+                <div class="skill-meter" aria-hidden="true">
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <div class="skill-name-wrap">
+                    <span class="skill-name">Java</span>
+                    <span class="skill-desc">Core Foundations, Object-Oriented Principles (OOP)</span>
+                  </div>
+                  <span class="skill-badge-level proficient">Proficient</span>
+                </div>
+                <div class="skill-meter" aria-hidden="true">
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Data Analytics & BI -->
+          <div class="skill-category-card reveal" data-category="analytics">
+            <div class="category-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+              <h3 class="category-title">Data Analytics &amp; Visualization</h3>
+            </div>
+
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <div class="skill-name-wrap">
+                    <span class="skill-name">Microsoft Excel</span>
+                    <span class="skill-desc">PivotTables, PivotCharts, Slicers, Power Query, Dynamic Modeling</span>
+                  </div>
+                  <span class="skill-badge-level advanced">Advanced</span>
+                </div>
+                <div class="skill-meter" aria-hidden="true">
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <div class="skill-name-wrap">
+                    <span class="skill-name">Power BI</span>
+                    <span class="skill-desc">Star Schema Modeling, DAX Measures, Executive KPI Dashboards</span>
+                  </div>
+                  <span class="skill-badge-level advanced">Advanced</span>
+                </div>
+                <div class="skill-meter" aria-hidden="true">
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <div class="skill-name-wrap">
+                    <span class="skill-name">Tableau</span>
+                    <span class="skill-desc">Visual Analytics, Interactive Reports &amp; Storyboards</span>
+                  </div>
+                  <span class="skill-badge-level proficient">Proficient</span>
+                </div>
+                <div class="skill-meter" aria-hidden="true">
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Developer & Data Tools -->
+          <div class="skill-category-card reveal" data-category="tools">
+            <div class="category-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+              <h3 class="category-title">Tools &amp; Development Environments</h3>
+            </div>
+
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <div class="skill-name-wrap">
+                    <span class="skill-name">Git &amp; GitHub</span>
+                    <span class="skill-desc">Version Control, Branch Management, Repository Architectures</span>
+                  </div>
+                  <span class="skill-badge-level advanced">Advanced</span>
+                </div>
+                <div class="skill-meter" aria-hidden="true">
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <div class="skill-name-wrap">
+                    <span class="skill-name">VS Code &amp; Visual Studio</span>
+                    <span class="skill-desc">Primary IDEs, Environment Configurations, Debugging</span>
+                  </div>
+                  <span class="skill-badge-level advanced">Advanced</span>
+                </div>
+                <div class="skill-meter" aria-hidden="true">
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <div class="skill-name-wrap">
+                    <span class="skill-name">Jupyter Notebooks</span>
+                    <span class="skill-desc">Exploratory Data Analysis, Machine Learning Workflows</span>
+                  </div>
+                  <span class="skill-badge-level proficient">Proficient</span>
+                </div>
+                <div class="skill-meter" aria-hidden="true">
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment filled"></span>
+                  <span class="meter-segment"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Soft Skills & Analytical Mindset -->
+          <div class="skill-category-card reveal" data-category="soft">
+            <div class="category-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <h3 class="category-title">Professional &amp; Analytical Aptitude</h3>
+            </div>
+
+            <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom: 1rem;">
+              Demonstrated through academic projects, team collaborations, and NPTEL certified soft-skills coursework:
+            </p>
+
+            <div class="soft-skills-list">
+              <span class="soft-skill-badge">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Analytical &amp; Critical Thinking
+              </span>
+              <span class="soft-skill-badge">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Data Storytelling &amp; Communication
+              </span>
+              <span class="soft-skill-badge">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Attention to Detail &amp; Data Accuracy
+              </span>
+              <span class="soft-skill-badge">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Team Collaboration &amp; Ownership
+              </span>
+              <span class="soft-skill-badge">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Fast Adaptability &amp; Problem Solving
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         Projects Section
+         ========================================================= -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Portfolio Showcase</span>
+          <h2 class="section-title">Featured Analytics Projects</h2>
+          <p class="section-subtitle">Real-world applications spanning machine learning classification, retail business intelligence, and relational data architecture.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Brain Stroke Prediction -->
+          <article class="project-card featured reveal">
+            <div class="project-top">
+              <div class="project-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <span class="project-date">Mar 2026</span>
+            </div>
+
+            <h3 class="project-title">Brain Stroke Risk Prediction</h3>
+            <p class="project-description">
+              Supervised predictive machine learning pipeline evaluating clinical and lifestyle indicators (age, hypertension, heart disease, average glucose level, and BMI) to anticipate stroke risk.
+            </p>
+
+            <ul class="project-highlights">
+              <li>Comprehensive data preprocessing: imputed missing values, one-hot encoded categorical parameters, and balanced class distributions.</li>
+              <li>Benchmarked 4 classifiers: K-Nearest Neighbors, Decision Trees, Random Forest, and XGBoost.</li>
+              <li><strong>Random Forest model attained peak accuracy of 99.33%</strong> with robust precision-recall metrics.</li>
+            </ul>
+
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Random Forest</span>
+              <span class="tech-tag">XGBoost</span>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/angimaria12/Angel/tree/main/04_Python/foundation/Machine%20Learning" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                View Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: FreshMart Sales Performance Dashboard -->
+          <article class="project-card featured reveal">
+            <div class="project-top">
+              <div class="project-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+              </div>
+              <span class="project-date">Sept 2026</span>
+            </div>
+
+            <h3 class="project-title">FreshMart Enterprise Sales Dashboard</h3>
+            <p class="project-description">
+              End-to-end spreadsheet business intelligence model tracking multi-branch supermarket performance across diverse product categories, revenue channels, and customer segments.
+            </p>
+
+            <ul class="project-highlights">
+              <li>Cleaned and unified 6 enterprise operational datasets with audit logs tracking missing values and duplicate rows.</li>
+              <li>Engineered dynamic KPI formulas, transactional metrics, profit margins, and revenue growth.</li>
+              <li>Built an interactive executive dashboard with synchronized <strong>PivotTables, PivotCharts, and timeline slicers</strong>.</li>
+            </ul>
+
+            <div class="tech-stack">
+              <span class="tech-tag">Microsoft Excel</span>
+              <span class="tech-tag">Power Query</span>
+              <span class="tech-tag">PivotTables &amp; Charts</span>
+              <span class="tech-tag">Slicers</span>
+              <span class="tech-tag">Data Modeling</span>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/angimaria12/Angel/tree/main/02_Excel/Project/FreshMart" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                View Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Invisilock Payment Transaction -->
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div class="project-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <span class="project-date">May 2025</span>
+            </div>
+
+            <h3 class="project-title">Invisilock Biometric Payment Security</h3>
+            <p class="project-description">
+              Multi-factor biometric verification system for online transactions incorporating facial recognition combined with behavioral keystroke dynamics and mouse movement analytics.
+            </p>
+
+            <ul class="project-highlights">
+              <li>Engineered behavioral deviation detectors capturing typing speed, hold times, and cursor flight patterns.</li>
+              <li>Architected a secure backend pipeline matching live telemetry against baseline user profiles.</li>
+              <li>Delivered a responsive front-end interface in JavaScript and CSS with real-time risk feedback.</li>
+            </ul>
+
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Behavioral Biometrics</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">Security Analytics</span>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/angimaria12/Angel" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                View Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: Medicare Hospital Operational DB -->
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div class="project-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <span class="project-date">2026</span>
+            </div>
+
+            <h3 class="project-title">Medicare Hospital Analytics DB</h3>
+            <p class="project-description">
+              Production-grade relational database architecture tracking multi-facility hospital admissions, diagnostics, bed occupancy, doctor utilization, and insurance billing.
+            </p>
+
+            <ul class="project-highlights">
+              <li>Structured 15 normalized relational tables with DDL constraints and foreign key integrity.</li>
+              <li>Authored 16 advanced SQL business intelligence queries utilizing CTEs, window functions, and joins.</li>
+              <li>Generated metrics for readmission rates, revenue collection cycles, and physician workloads.</li>
+            </ul>
+
+            <div class="tech-stack">
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">Relational Modeling</span>
+              <span class="tech-tag">ETL Pipelines</span>
+              <span class="tech-tag">Healthcare Analytics</span>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/angimaria12/Angel/tree/main/03_SQL/Projects/Medicare" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                View Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5: AeroHouse Manufacturing BI -->
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div class="project-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <span class="project-date">2026</span>
+            </div>
+
+            <h3 class="project-title">AeroHouse Manufacturing Power BI</h3>
+            <p class="project-description">
+              Industrial operations dashboard evaluating manufacturing line throughput, assembly cycle times, tolerance compliance, and scrap cost reduction.
+            </p>
+
+            <ul class="project-highlights">
+              <li>Architected Star-schema data models connecting production facts with machine and shift dimensions.</li>
+              <li>Authored advanced DAX measures for Overall Equipment Effectiveness (OEE) and downtime tracking.</li>
+              <li>Designed drill-through visual canvas enabling plant managers to identify defect bottlenecks.</li>
+            </ul>
+
+            <div class="tech-stack">
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">DAX Measures</span>
+              <span class="tech-tag">Star Schema</span>
+              <span class="tech-tag">Manufacturing BI</span>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/angimaria12/Angel/tree/main/05_PowerBI" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                View Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 6: TrendKart E-Commerce Sales -->
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div class="project-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </div>
+              <span class="project-date">2026</span>
+            </div>
+
+            <h3 class="project-title">TrendKart Multi-Channel Fashion Analytics</h3>
+            <p class="project-description">
+              E-commerce retail analytics modeling fashion apparel return rates, channel profitability, regional sales velocity, and seasonal inventory turnover.
+            </p>
+
+            <ul class="project-highlights">
+              <li>Conducted rigorous data auditing resolving inconsistent discount codes and missing regional tags.</li>
+              <li>Integrated dynamic Excel formulas (XLOOKUP, INDEX/MATCH, SUMIFS) for automated summaries.</li>
+              <li>Delivered an interactive multi-filter dashboard highlighting channel margin contributions.</li>
+            </ul>
+
+            <div class="tech-stack">
+              <span class="tech-tag">Excel Analytics</span>
+              <span class="tech-tag">Retail Modeling</span>
+              <span class="tech-tag">KPI Analysis</span>
+              <span class="tech-tag">Data Auditing</span>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/angimaria12/Angel/tree/main/02_Excel/Project/TrendKart" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                View Repository
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         Certifications Section
+         ========================================================= -->
+    <section id="certifications">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Continuous Learning</span>
+          <h2 class="section-title">Certifications &amp; Credentials</h2>
+          <p class="section-subtitle">Industry-recognized coursework and hands-on job simulations demonstrating validated technical capabilities.</p>
+        </div>
+
+        <div class="cert-grid">
+          <!-- Cert 1 -->
+          <div class="cert-card reveal">
+            <div class="cert-badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <div class="cert-content">
+              <h3 class="cert-title">Data Analytics Job Simulation</h3>
+              <div class="cert-issuer">Deloitte Australia (Forage)</div>
+              <p class="cert-meta">Completed practical tasks in business data analysis, forensic data auditing, dashboard storytelling, and executive client presentations.</p>
+            </div>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="cert-card reveal">
+            <div class="cert-badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <div class="cert-content">
+              <h3 class="cert-title">Data Analyst 101</h3>
+              <div class="cert-issuer">Microsoft &amp; Simplilearn</div>
+              <p class="cert-meta">Foundational data analytics certification covering exploratory data analysis, business metrics, visualization principles, and dashboarding.</p>
+            </div>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="cert-card reveal">
+            <div class="cert-badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <div class="cert-content">
+              <h3 class="cert-title">Database Management Systems (DBMS)</h3>
+              <div class="cert-issuer">NPTEL / IIT</div>
+              <p class="cert-meta">Comprehensive theoretical and practical grounding in relational data models, normalization (1NF-BCNF), relational algebra, and SQL transactions.</p>
+            </div>
+          </div>
+
+          <!-- Cert 4 -->
+          <div class="cert-card reveal">
+            <div class="cert-badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <div class="cert-content">
+              <h3 class="cert-title">Cybersecurity Job Simulation</h3>
+              <div class="cert-issuer">Deloitte Australia (Forage)</div>
+              <p class="cert-meta">Practical simulation addressing threat intelligence, secure communication protocols, behavioral anomaly detection, and access controls.</p>
+            </div>
+          </div>
+
+          <!-- Cert 5 -->
+          <div class="cert-card reveal">
+            <div class="cert-badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <div class="cert-content">
+              <h3 class="cert-title">Developing Soft Skills &amp; Personality</h3>
+              <div class="cert-issuer">NPTEL / IIT</div>
+              <p class="cert-meta">Specialized training in interpersonal communication, structured problem-solving, workplace adaptability, and leadership etiquette.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         Education Section
+         ========================================================= -->
+    <section id="education">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Academic Background</span>
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">Rigorous undergraduate computer science foundation emphasizing software engineering and data systems.</p>
+        </div>
+
+        <div class="education-card reveal">
+          <div class="edu-header">
+            <div>
+              <h3 class="edu-degree">Bachelor of Computer Applications (BCA)</h3>
+              <div class="edu-institution">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                PSGR Krishnammal College for Women
+              </div>
+              <div class="edu-location">Coimbatore, Tamil Nadu, India</div>
+            </div>
+            <span class="edu-year">2023 &mdash; 2026</span>
+          </div>
+
+          <p style="color:var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+            Completed an intensive computer applications degree curriculum with deep immersion in database management, statistical techniques, algorithmic design, and object-oriented programming. Actively participated in technical projects and laboratory modules.
+          </p>
+
+          <div class="edu-highlights">
+            <div class="edu-highlight-item">
+              <h4>Key Coursework</h4>
+              <p>Database Management Systems (DBMS), Python Programming, Object-Oriented Programming (Java), Data Structures &amp; Algorithms, Statistics &amp; Probability, Web Technologies, Software Engineering.</p>
+            </div>
+            <div class="edu-highlight-item">
+              <h4>Academic Focus</h4>
+              <p>Specialized practical laboratories in relational data schema design, SQL query optimization, predictive modeling workflows, and automated analytical reporting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         Contact Section
+         ========================================================= -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Let's Connect</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Open for entry-level Data Analyst positions, internships, and data visualization collaborations.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Direct Links -->
+          <div class="contact-info-panel reveal">
+            <a href="mailto:anglinamaria24@gmail.com" class="contact-card">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-card-text">
+                <div class="contact-label">Email Address</div>
+                <div class="contact-value">anglinamaria24@gmail.com</div>
+              </div>
+              <button class="copy-btn" onclick="event.preventDefault(); copyToClipboard('anglinamaria24@gmail.com', 'Email copied to clipboard!');" title="Copy email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </a>
+
+            <a href="tel:+918056900192" class="contact-card">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-card-text">
+                <div class="contact-label">Phone &amp; WhatsApp</div>
+                <div class="contact-value">+91 8056900192</div>
+              </div>
+              <button class="copy-btn" onclick="event.preventDefault(); copyToClipboard('+918056900192', 'Phone number copied to clipboard!');" title="Copy phone">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </a>
+
+            <a href="https://www.linkedin.com/in/anglina-maria" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </div>
+              <div class="contact-card-text">
+                <div class="contact-label">LinkedIn Profile</div>
+                <div class="contact-value">linkedin.com/in/anglina-maria</div>
+              </div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+
+            <a href="https://github.com/angimaria12" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </div>
+              <div class="contact-card-text">
+                <div class="contact-label">GitHub Repositories</div>
+                <div class="contact-value">github.com/angimaria12</div>
+              </div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-panel reveal">
+            <form id="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-name" class="form-label">Full Name *</label>
+                  <input type="text" id="form-name" class="form-control" placeholder="e.g. Hiring Manager" required>
+                </div>
+                <div class="form-group">
+                  <label for="form-email" class="form-label">Work Email *</label>
+                  <input type="email" id="form-email" class="form-control" placeholder="name@company.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label">Subject *</label>
+                <input type="text" id="form-subject" class="form-control" placeholder="Data Analyst Role / Project Inquiry" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Message *</label>
+                <textarea id="form-message" class="form-control" rows="5" placeholder="Hello Anglina, we reviewed your portfolio and would like to connect regarding an opportunity..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       Footer
+       ========================================================= -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p class="footer-text">
+        &copy; 2026 Anglina Maria M. Built with semantic HTML5, modern CSS &amp; vanilla JavaScript.
+      </p>
+
+      <ul class="footer-links">
+        <li><a href="#hero" class="footer-link">Home</a></li>
+        <li><a href="#projects" class="footer-link">Projects</a></li>
+        <li><a href="#skills" class="footer-link">Skills</a></li>
+        <li><a href="#contact" class="footer-link">Contact</a></li>
+        <li><a href="https://github.com/angimaria12" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" role="alert" aria-live="assertive">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    <span id="toast-message">Notification message</span>
+  </div>
+
+  <!-- Resume Preview Modal -->
+  <div class="modal-overlay" id="resume-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close" aria-label="Close modal">&times;</button>
+      <h3 id="modal-title" style="font-size: 1.35rem; margin-bottom: 0.5rem; color:var(--text-primary);">Anglina Maria M &mdash; Resume</h3>
+      <p style="font-size: 0.9rem; color:var(--text-secondary); margin-bottom: 1.5rem;">
+        Entry-level Data Analyst | BCA Graduate (2026) | PSGR Krishnammal College for Women
+      </p>
+
+      <div style="background:var(--bg-surface-elevated); padding:1.25rem; border-radius:var(--radius-md); border:1px solid var(--border-color); margin-bottom:1.5rem;">
+        <h4 style="font-size:0.95rem; margin-bottom:0.4rem; color:var(--text-primary);">Resume Status: Ready for Customization</h4>
+        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.75rem;">
+          To connect your own finalized PDF resume to this button:
+        </p>
+        <ol style="font-size:0.825rem; color:var(--text-muted); padding-left:1.25rem; line-height:1.6;">
+          <li>Save your resume PDF into this repository as <code style="background:var(--code-bg); padding:2px 6px; border-radius:4px;">resume.pdf</code>.</li>
+          <li>The download button will directly trigger download or preview.</li>
+        </ol>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:0.75rem;">
+        <button class="btn btn-secondary btn-sm" id="modal-cancel-btn">Close</button>
+        <a href="mailto:anglinamaria24@gmail.com?subject=Requesting%20Resume%20-%20Anglina%20Maria" class="btn btn-primary btn-sm">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Request via Email
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       Vanilla JavaScript Interactions
+       ========================================================= -->
+  <script>
+    // -----------------------------------------------------------
+    // Theme Management (Light / Dark Mode with Persistence)
+    // -----------------------------------------------------------
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('theme-icon-sun');
+    const moonIcon = document.getElementById('theme-icon-moon');
+    const htmlElement = document.documentElement;
+
+    function applyTheme(theme) {
+      htmlElement.setAttribute('data-theme', theme);
+      localStorage.setItem('portfolio-theme', theme);
+      if (theme === 'light') {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      } else {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      }
+    }
+
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('portfolio-theme') || 
+      (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    applyTheme(savedTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const targetTheme = currentTheme === 'light' ? 'dark' : 'light';
+      applyTheme(targetTheme);
+      showToast(`Switched to ${targetTheme} mode`);
+    });
+
+    // -----------------------------------------------------------
+    // Mobile Drawer Navigation Toggle
+    // -----------------------------------------------------------
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+      });
+    });
+
+    // -----------------------------------------------------------
+    // Scroll Progress Bar & ScrollSpy (Active Nav Highlighting)
+    // -----------------------------------------------------------
+    const progressBar = document.getElementById('progress-bar');
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      progressBar.style.width = `${progress}%`;
+
+      // Active Section Highlighting
+      let currentSectionId = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+        if (scrollTop >= sectionTop && scrollTop < sectionTop + sectionHeight) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSectionId}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // -----------------------------------------------------------
+    // Scroll Reveal Animations via IntersectionObserver
+    // -----------------------------------------------------------
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // -----------------------------------------------------------
+    // Skills Interactive Category Filter
+    // -----------------------------------------------------------
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const skillCards = document.querySelectorAll('.skill-category-card');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filterValue = tab.getAttribute('data-filter');
+
+        skillCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filterValue === 'all' || category === filterValue) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // -----------------------------------------------------------
+    // Toast Notification Utility
+    // -----------------------------------------------------------
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
+    let toastTimeout;
+
+    function showToast(message) {
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastMessage.textContent = message;
+      toast.classList.add('show');
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    // -----------------------------------------------------------
+    // Copy to Clipboard Helper
+    // -----------------------------------------------------------
+    function copyToClipboard(text, successMsg) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(successMsg);
+        }).catch(() => {
+          fallbackCopyText(text, successMsg);
+        });
+      } else {
+        fallbackCopyText(text, successMsg);
+      }
+    }
+
+    function fallbackCopyText(text, successMsg) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg);
+      } catch (err) {
+        showToast('Press Ctrl+C to copy: ' + text);
+      }
+      document.body.removeChild(textarea);
+    }
+
+    // -----------------------------------------------------------
+    // Resume Modal Handler
+    // -----------------------------------------------------------
+    const resumeBtn = document.getElementById('resume-btn');
+    const resumeModal = document.getElementById('resume-modal');
+    const modalClose = document.getElementById('modal-close');
+    const modalCancelBtn = document.getElementById('modal-cancel-btn');
+
+    resumeBtn.addEventListener('click', () => {
+      resumeModal.classList.add('open');
+    });
+
+    function closeModal() {
+      resumeModal.classList.remove('open');
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalCancelBtn.addEventListener('click', closeModal);
+    resumeModal.addEventListener('click', (e) => {
+      if (e.target === resumeModal) closeModal();
+    });
+
+    // -----------------------------------------------------------
+    // Interactive Contact Form Submission
+    // -----------------------------------------------------------
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('form-name').value.trim();
+      const email = document.getElementById('form-email').value.trim();
+      const subject = document.getElementById('form-subject').value.trim();
+      const message = document.getElementById('form-message').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        showToast('Please fill out all required fields.');
+        return;
+      }
+
+      // Generate mailto link fallback so user can send immediately from their mail client
+      const mailtoUrl = `mailto:anglinamaria24@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Sender Name: " + name + "\nSender Email: " + email + "\n\n" + message)}`;
+      
+      // Open mail client and display confirmation toast
+      window.location.href = mailtoUrl;
+      showToast('Opening your email client to send message!');
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>
