@@ -10,6 +10,43 @@ FreshMart operates multiple supermarket branches offering diverse product catego
 
 ---
 
+## 🖥️ Executive Sales Performance Dashboard
+
+![FreshMart Sales Performance Dashboard](./assets/freshmart_dashboard.png)
+
+### Key Metrics Displayed on Dashboard:
+* **Total Sales**: **₹ 28,68,433**
+* **Total Profit**: **₹ 7,37,359**
+* **Profit Margin**: **25.7%**
+* **Units Sold**: **9,823**
+* **Return Rate**: **4.6%**
+
+### Visual Reports & Analytical Breakdowns:
+1. **Interactive Multi-Level Slicers**:
+   * **Membership**: Segment views by `Gold`, `Bronze`, and unassigned profiles.
+   * **Region**: Filter by `East`, `North`, `South`, `West`, and unmapped zones.
+   * **Return Status**: Filter between `Not Returned` vs. `Returned`.
+   * **Payment Mode**: Multi-select across `Cash`, `Credit Card`, `Debit Card`, `Net Banking`, `UPI`, and `Wallet`.
+   * **Sales Channel**: Analyze performance across `In-Store`, `Mobile App`, and `Online`.
+2. **How Does Sales Performance Change Throughout the Year? (Seasonality Trend)**:
+   * Dual-axis time series tracking monthly Sales Amount vs. Profit from January through December.
+   * Highlights a major festive peak in **October** (Sales surpassing ₹4,50,000 with > ₹1,20,000 in gross profit).
+3. **How Does Each Region Contribute to Business Performance?**:
+   * Clustered column chart comparing Sales Amount, Profit, and Quantity across geographic zones.
+   * The **South Region** serves as the primary revenue engine, contributing over ₹18,00,000 in sales.
+4. **Where Do Customers Prefer to Shop? (Channel Distribution)**:
+   * **In-Store**: **70%** (Dominant point-of-sale volume).
+   * **Online**: **21%** (Digital website delivery).
+   * **Mobile App**: **9%** (Direct app orders).
+5. **Customer Profitability & Transaction Frequency**:
+   * Pivot audit tracking top patrons (e.g., *Lalitha Nathan* ₹9,206 profit / 16 transactions, *Elango Nair* ₹8,434 profit / 15 transactions).
+6. **How Do Product Categories Perform?**:
+   * Category contribution benchmark showing high-velocity sales in **Beverages**, **Snacks**, **Bakery**, and **Dairy**.
+7. **Which Products Drive Overall Performance?**:
+   * Item-level volume and revenue ranking featuring top SKUs: *Coca-Cola Coffee*, *Harvest Gold Rusk*, *Nescafe Coffee 1kg*, *Lays Namkeen*, *Pepsi Tea*, and *Local Farm Fresh Vegetables*.
+
+---
+
 ## 🏗️ Relational Schema & Data Architecture
 
 The project connects 6 relational business entities into a star/snowflake schema inside Excel:
@@ -92,6 +129,8 @@ erDiagram
 ```text
 FreshMart/
 ├── README.md                           # This comprehensive project documentation
+├── 📁 assets/                          # Dashboard visuals and screenshot media
+│   └── freshmart_dashboard.png         # Executive Sales Performance Dashboard preview
 └── 📁 src/                             # Source files, dashboard models & datasets
     ├── freshmart.dashboard.xlsx        # Master interactive Excel workbook with dashboards & KPI models
     ├── 📁 CLEANED/                     # Transformed, audited & analysis-ready data
@@ -125,18 +164,6 @@ Inside `freshmart.dashboard.xlsx`, dynamic formulas and Pivot Tables calculate t
 5. **Discount Impact**: Total revenue waived through promotional campaigns.
 6. **Sales Channel Mix**: Revenue share of **In-Store** vs. **Online Delivery**.
 7. **Temporal Trends**: Revenue volume analyzed by **Day Type** (*Weekday* vs. *Weekend*) and hourly peak trading intervals (*Order Time*).
-
----
-
-## 🖥️ Executive Dashboard Features
-
-* **KPI Summary Scorecards**: Total Revenue, Gross Profit, Total Volume Sold, Average Transaction Size, and Active Store Branches.
-* **Interactive Slicers**: Store Branch, Product Category, Payment Mode (Cash, Wallet, Card, UPI), and Time Period.
-* **Visualizations**:
-  * Category-wise Revenue & Margin Bar Charts.
-  * Monthly Sales Run-rate & Seasonality Line Charts.
-  * Store Performance Benchmarking Column Charts.
-  * Payment Method & Return Rate Donut Charts.
 
 ---
 
