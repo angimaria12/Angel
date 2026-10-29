@@ -10,12 +10,41 @@ TrendKart is a digital apparel brand managing direct-to-consumer sales across mu
 
 ---
 
+## 🖥️ Executive Sales Performance Dashboard
+
+![TrendKart Sales Performance Dashboard](./assets/trendkart_dashboard.png)
+
+### Key Metrics Displayed on Dashboard:
+* **Total Sales**: **₹ 92,27,179.96**
+* **Total Profit**: **₹ 18,04,518.54**
+* **Profit Margin**: **19.56%**
+* **Total Cost**: **₹ 65,96,441.12**
+* **Return Rate**: **4.87%**
+
+### Visual Reports & Analytical Breakdowns:
+1. **Regional Filter (Slicer)**: Multi-select filtering across **South Zone 1**, **South Zone 2**, and **South Zone 3**.
+2. **Top 10 Stores**: Performance ranking of top revenue-generating retail outlets and kiosks (including Kochi High Street, Thiruvananthapuram, Vellore, and Guntur).
+3. **Actual Sales vs. Monthly Target**: Store-level evaluation comparing actual sales against benchmark monthly quotas across store IDs (`STR004`, `STR007`, `STR011`, etc.).
+4. **Monthly Sales & Profit Trend (Apr 2024 – Mar 2025)**: Time-series analysis of sales vs. profit run-rate, highlighting festive peak volume in **October 2024** (> ₹15L sales).
+5. **Top 10 Selling Products**: Top item velocity across key apparel SKUs (Spykar Cotton Saree, US Polo Casual Top, Peter England Crop Top, Metro Shoes, etc.).
+6. **Sales by State (Donut Distribution)**: Balanced geographic penetration across southern states:
+   * **Karnataka**: 22%
+   * **Telangana**: 21%
+   * **Kerala**: 20%
+   * **Tamil Nadu**: 19%
+   * **Andhra Pradesh**: 18%
+7. **Category Sales & Profit**: Contribution analysis across product lines (*Women Sarees*, *Handbags*, *Watches*, *Jewellery*, *Women Dresses*, *Footwear*, *Men Ethnic*, *Women Jeans*, *Women Kurtis*, *Winter Wear*).
+
+---
+
 ## 🏗️ Folder Structure & File Inventory
 
 ```text
 TrendKart/
 ├── README.md                           # This comprehensive project documentation
 ├── TrendKart_FinalDashboard.xlsx       # Executive KPI dashboard and presentation workbook
+├── 📁 assets/                          # Dashboard screenshots and visual media
+│   └── trendkart_dashboard.png         # Executive Sales Performance Dashboard screenshot
 ├── 📁 Cleaned/                         # Cleaned models, audit logs & calculations
 │   └── TrendKart_Data_Cleaning.xlsx    # Full data transformation & audit workbook
 └── 📁 Raw/                             # Source fashion enterprise dataset
